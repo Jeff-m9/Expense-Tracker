@@ -5,7 +5,7 @@ function App() {
   return (
     <div>
       <h1 className="text-5xl font-bold">Expense Traker</h1>
-      <br/>
+      <br />
       <p>
         Start taking control of your finances and life. Record, categorise and
         analyse your spending

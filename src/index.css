@@ -9,7 +9,7 @@ th {
   padding: 8px;
   text-align: left;
   background-color: black;
-  color: white
+  color: white;
 }
 
 td {
@@ -17,5 +17,5 @@ td {
   padding: 8px;
   text-align: left;
   background-color: #dddddd;
-  font-size: 20px
+  font-size: 20px;
 }
