@@ -1,7 +1,10 @@
 import { Form } from "./assets/components/Form";
 import { Table } from "./assets/components/table";
+import { useState } from "react";
 
 function App() {
+  const [expenses, setExpenses] = useState([]);
+
   return (
     <div>
       <h1 className="text-5xl font-bold">Expense Traker</h1>
@@ -12,8 +15,12 @@ function App() {
       </p>
 
       <div className="flex pt-8 gap-8">
-        <Form />
-        <Table />
+        <Form
+          addedExpense={(expense) => {
+            setExpenses((expenseList) => [...expenseList, expense]);
+          }}
+        />
+        <Table expenses={expenses} />
       </div>
     </div>
   );
