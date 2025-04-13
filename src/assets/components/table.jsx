@@ -1,10 +1,22 @@
+import { useState } from "react";
+
 export function Table({ expenses }) {
+
+  const [searchInput, setSearchInput] = useState("")
+  
+  const filteredExpenses = expenses.filter((expense) =>
+    expense.name.toLowerCase().includes(searchInput.toLowerCase())
+  );
+
   return (
     <div className="w-full">
       <input
         type="text"
         placeholder="Search Expense"
         className="p-1 border"
+        onChange={(e) => {
+          setSearchInput(e.target.value);
+        }}
       ></input>
 
       <div className="border-2 mt-2.5 overflow-x-auto">
@@ -19,7 +31,7 @@ export function Table({ expenses }) {
             </tr>
           </thead>
           <tbody>
-            {expenses.map((expense, index) => (
+            {filteredExpenses.map((expense, index) => (
               <tr key={index}>
                 <td className="border p-2">{expense.name}</td>
                 <td className="border p-2">{expense.description}</td>
